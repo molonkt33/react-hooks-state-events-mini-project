@@ -6,6 +6,7 @@ function NewTaskForm({ categories, onTaskFormSubmit }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (text.trim() === "") return; // Prevent adding empty tasks
     onTaskFormSubmit({ text, category });
     setText("");
     setCategory(categories[0]);
